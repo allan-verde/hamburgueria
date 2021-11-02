@@ -1,18 +1,20 @@
+import './style.css'
+
 import CarrinhoItem from '../CarrinhoItem'
 
 const Carrinho = ( { currentSale } ) => {
     // const {  } = currentSale
     console.log(currentSale)
     return (
-        <section>
+        <section className='carrinho'>
             <header>Carrinho de Compras</header>
             <main>
                 {
                     currentSale.map( (prod) => <CarrinhoItem prod={prod}/> )
                 }
             </main>
-            <div>
-                <h3>Total: R$40,00</h3>
+            <div className='carrinhoTotal'>
+                <h3><p>Total:</p><span>R$40,00</span></h3>
                 <button>Remover Todos</button>
             </div>
 

@@ -1,0 +1,57 @@
+.carrinho {
+    width: 382px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: #F5F5F5;
+}
+.carrinho header {
+    width: 100%;
+    height: 65px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #27AE60;
+    height: 65px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+.carrinho main {
+    width: 100%;
+    padding: 20px;
+}
+.carrinhoTotal {
+    padding: 0 20px 20px;
+}
+.carrinhoTotal h3 {
+    border-top: 3px solid #E0E0E0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.carrinhoTotal p {
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.carrinhoTotal span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #828282;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.carrinhoTotal button {
+    padding: 0px 20px;
+    width: 343px;
+    height: 60px;
+    color: #828282;
+    font-size: 16;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    background-color: #E0E0E0;
+    border: 2px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
