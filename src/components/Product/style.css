@@ -1,0 +1,83 @@
+.productCard {
+    position: relative;
+    width: 300px;
+    border: 2px solid #E0E0E0;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 346px;
+    margin-right: 20px;
+}
+
+.productCardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 150px;
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+}
+.productCardHeader img {
+    width: 177px;
+    height: 177px;
+}
+
+.productCardMain {
+    width: 300px;
+    height: 196px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.productCardMainInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.productCardMainInfo h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    color: #333;
+    padding-bottom: 15px;
+}
+.productCardMainInfo p {
+    color: #828282;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    padding-bottom: 15px;
+}
+.productCardMainInfo span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    color: #27AE60;
+}
+
+.productCardMain button {
+    width: 106;
+    height: 40px;
+    padding: 0px 20px;
+    background: #27AE60;
+    border: 2px solid #27AE60;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #FFF;
+}
