@@ -1,7 +1,7 @@
 import './style.css'
 
-const CarrinhoItem = ( { prod } ) => {
-    const { id, name, category, price, img } = prod
+const CarrinhoItem = ( { prod, removeItem } ) => {
+    const { id, name, category, img } = prod
     return (
         <div className='carrinhoItem'>
             <img src={img} alt={name} />
@@ -10,7 +10,7 @@ const CarrinhoItem = ( { prod } ) => {
                 <h2>{name}</h2>
                 <span>{category}</span>
                 </div>
-                <button>Remover</button>
+                <button onClick={() => removeItem(id)}>Remover</button>
             </div>
         </div>
     )

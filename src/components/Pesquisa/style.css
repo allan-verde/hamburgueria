@@ -1,0 +1,14 @@
+.titlePesquisa {
+  margin: 30px 0;
+}
+.titlePesquisa p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 34px;
+  color: #333;
+}
+
+.titlePesquisa p span {
+  color: #828282;
+}

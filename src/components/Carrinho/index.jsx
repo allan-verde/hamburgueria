@@ -1,22 +1,34 @@
 import './style.css'
-
 import CarrinhoItem from '../CarrinhoItem'
 
-const Carrinho = ( { currentSale } ) => {
-    // const {  } = currentSale
-    console.log(currentSale)
+const Carrinho = ( { currentSale, removeItem, removeTodos } ) => {
+     let total = currentSale.reduce( (acc, cur) => {
+        return acc + cur.price
+    }, 0)
+    console.log(total)
+
     return (
         <section className='carrinho'>
             <header>Carrinho de Compras</header>
-            <main>
-                {
-                    currentSale.map( (prod) => <CarrinhoItem prod={prod}/> )
-                }
-            </main>
-            <div className='carrinhoTotal'>
-                <h3><p>Total:</p><span>R$40,00</span></h3>
-                <button>Remover Todos</button>
-            </div>
+            {
+                currentSale.length > 0 ?
+                <>
+                    <main>
+                        {
+                            currentSale.map( (prod) => <CarrinhoItem prod={prod} removeItem={removeItem} /> )
+
+                        }
+                    </main>
+                    <div className='carrinhoTotal'>
+                        <h3><p>Total:</p><span>R$ {total}</span></h3>
+                        <button onClick={() => removeTodos()}>Remover Todos</button>
+                    </div>
+                </> : 
+                <div className='CarrinhoVazio'>
+                    <h2>Sua sacola está vazia</h2>
+                    <span>Adicione itens</span>
+                </div>  
+            }
 
         </section>
     )

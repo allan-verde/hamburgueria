@@ -3,6 +3,7 @@ import { useState } from 'react'
 import MenuContainer from './components/MenuContainer'
 import HeaderComponent from './components/HeaderComponent'
 import Carrinho from './components/Carrinho'
+import Pesquisa from './components/Pesquisa'
 
 function App() {
 
@@ -15,26 +16,34 @@ function App() {
     { id: 6, name: 'Fanta', category: 'Bebidas', price: 4.99, img: 'https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png' },
   ])
 
-  // const [filteredProducts, setFilteredProducts] = useState([])
   const [currentSale, setCurrentSale] = useState([])
-  const [cartTotal, setCartTotal] = useState(0)
+  const [pesquisou, setPesquisou] = useState(false)
+  const [valorPesquisado, setValorPesquisado] = useState('')
 
   function showProducts(valorInput) {
-    let result = products.filter( (item) => item.name === valorInput )
+    setValorPesquisado(valorInput)
+    let result = products.filter( (item) => item.name.toLowerCase() === valorInput.toLowerCase() || item.category.toLowerCase() === valorInput.toLowerCase() )
     setProducts(result)
   }
   function handleClick(productId) {
     let result = products.find( (item) => item.id === productId )
     setCurrentSale( [...currentSale, result] )
   }
-  
-  // console.log(currentSale)
+  function removeItem(id) {
+    let result = currentSale.filter( (item) => item.id !== id )
+    setCurrentSale(result)
+  }
+  function removeTodos() {
+    setCurrentSale([])
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <HeaderComponent showProducts={showProducts}/>
+        <HeaderComponent showProducts={showProducts} setPesquisou={setPesquisou}/>
+        {pesquisou ? (<Pesquisa valorPesquisado={valorPesquisado}/>) : console.log('sem pesquisa')}
         <MenuContainer products={products} handleClick={handleClick} />
-        <Carrinho currentSale={currentSale}/>
+        <Carrinho currentSale={currentSale} removeItem={removeItem} removeTodos={removeTodos}/>
       </header>
     </div>
   )
