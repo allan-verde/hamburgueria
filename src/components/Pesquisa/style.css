@@ -12,3 +12,9 @@
 .titlePesquisa p span {
   color: #828282;
 }
+
+@media (min-width: 800px) {
+  .titlePesquisa {
+    margin: 0 0 20px 20px;
+  }
+}

@@ -1,8 +1,6 @@
 .header {
     width: 100%;
     height: 139px;
-    top: 0;
-    left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,6 +21,7 @@ div {
 input {
     padding: 0px 10px 0px 15px;
     width: 382px;
+    max-width: 80%;
     height: 60px;
     background: #FFFFFF;
     border: 2px solid #E0E0E0;
@@ -43,5 +42,15 @@ input {
     color: #FFF;
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 12%;
+}
+@media (min-width: 800px) {
+    .header {
+        padding: 0 5%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #F5F5F5;
+    }
 }

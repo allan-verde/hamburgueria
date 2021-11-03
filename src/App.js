@@ -3,7 +3,7 @@ import { useState } from 'react'
 import MenuContainer from './components/MenuContainer'
 import HeaderComponent from './components/HeaderComponent'
 import Carrinho from './components/Carrinho'
-import Pesquisa from './components/Pesquisa'
+// import Pesquisa from './components/Pesquisa'
 
 function App() {
 
@@ -27,7 +27,13 @@ function App() {
   }
   function handleClick(productId) {
     let result = products.find( (item) => item.id === productId )
-    setCurrentSale( [...currentSale, result] )
+
+    let prodDupli = currentSale.find( (item) => item.id === productId)
+
+    prodDupli === undefined ?
+    setCurrentSale( [...currentSale, result] ) :
+    console.log('produto duplicado')
+
   }
   function removeItem(id) {
     let result = currentSale.filter( (item) => item.id !== id )
@@ -41,10 +47,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <HeaderComponent showProducts={showProducts} setPesquisou={setPesquisou}/>
-        {pesquisou ? (<Pesquisa valorPesquisado={valorPesquisado}/>) : console.log('sem pesquisa')}
-        <MenuContainer products={products} handleClick={handleClick} />
-        <Carrinho currentSale={currentSale} removeItem={removeItem} removeTodos={removeTodos}/>
       </header>
+      <section className='App-section'>
+        
+        <MenuContainer products={products} handleClick={handleClick} pesquisou={pesquisou} valorPesquisado={valorPesquisado}/>
+        <Carrinho currentSale={currentSale} removeItem={removeItem} removeTodos={removeTodos}/>
+      </section>
     </div>
   )
 }

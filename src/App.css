@@ -11,6 +11,17 @@
 .App-header {
   background-color: #FFF;
   width: 100vw;
-  height: 100vh;
-  /* overflow: hidden; */
+  padding: 15px;
+  box-sizing: border-box;
+}
+.App-section {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 2% 5%;
+}
+@media (min-width: 800px) {
+  .App-section {
+    flex-direction: row;
+  }
 }
